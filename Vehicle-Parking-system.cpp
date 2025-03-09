@@ -5,6 +5,7 @@ using namespace std;
 
 const double RATE_PER_HOUR = 50.0;
 const int TOTAL_PARKING_SPOTS = 100;
+int availableSpots = 100;
 map<string, time_t> parkedVehicles; // Store vehicle number and entry time
 
 void printBorder() {
