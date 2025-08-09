@@ -1,64 +1,65 @@
-# Vehicle Parking System 🚗🅿️
+# 🚗 Vehicle Parking System 🅿️
 
-This project is a **multi-language implementation** of a **Vehicle Parking Management System**. It allows vehicle check-in/check-out, calculates parking fees, tracks availability, and maintains history. The system has been developed as part of an academic project(C++) and casual learning initiative(java & Python).
+This is a Java-based Vehicle Parking Management System built using Maven.
+It was developed by adapting my older console-based parking system code and enhancing it with Maven build management, CI/CD automation, and Docker support.
 
+### 📜 Project Overview
 ---
+Vehicle Check-in / Check-out with slot tracking
 
-## 🔧 Languages Used
+Automatic Fee Calculation (can be customized)
 
-- ✅ **C++** – Console-based, file-structure for data persistence.
-- ✅ **Java** – Console-based, basic logic implementation(can use javafx for GUI).
-- ✅ **Python** – GUI-based using `Tkinter` for enhanced user interaction (current version).
+Real-time Slot Availability display
 
+Console-based Java Implementation for simplicity and portability
+
+CI/CD Integration to ensure code is always tested before merging to main
+
+Dockerfile added to containerize the application for easy deployment (currently not hosted on Docker Hub)
+
+
+### 🛠️ Tech Stack
 ---
+Java 17 (Temurin)
 
-## 📌 Features (Python GUI Version)
+Maven (Project Build & Dependency Management)
 
-- Check-in vehicles with vehicle number
-- Check-out with automatic fee calculation (`₹50/hour`)
-- Real-time parking spot availability (`100` total spots, can be increased)
-- Track and display parked vehicles
-- View full **session history** of all checked-out vehicles
-- **No database** required (in-memory only)
+JUnit (Testing)
 
+GitHub Actions (CI/CD Pipeline)
+
+Docker (Containerization)
+
+### 🔧 Features Implemented
 ---
+✅ Adapted from old console-based Java version<br>
+✅ Maven-based project structure<br>
+✅ CI/CD pipeline that:<br>
+ -Builds the project<br>
+    -Runs automated tests on every push to main<br>
+    -Sends email alerts about pipeline status<br>
+✅ Dockerfile created for building a ready-to-run container image<br>
+✅ Image not pushed to Docker Hub — ready for local build and hosting when needed<br>
 
-## 🖥️ Tech Stack
-
-- **Python 3.11+**
-- `tkinter` (for GUI)
-- `time` module for tracking duration
-- Single-file standalone GUI app
-
+### 📬 CI/CD Details
 ---
+Workflow Trigger: On every push or PR to main
 
-## 🚀 How to Run the Python Project
+Actions Performed:<br>
+    -Checkout code<br>
+    -Set up Java environment<br>
+-Build with Maven<br>
+-Run tests<br>
+-Send email notification of success/failure<br>
+-Ensures code quality and prevents broken builds from reaching production.<br>
 
-1. Install Python (recommended: **3.11 or earlier**, avoid 3.13+ for now)
-2. Save the file as `anyname.py`
-3. Open terminal or command prompt:
-    ```bash
-    python gui.py
-    ```
-4. Use the GUI to:
-   - Enter vehicle number and check-in
-   - Check out the same vehicle to calculate duration & cost
-   - View current status and full history
-
+### 🔮 Future Scope
 ---
+Host Docker image on Docker Hub
 
-## 📘 Notes
+Add REST API layer to the parking system
 
-- **C++ Version**: Uses file I/O to maintain basic record structure; great for academic-style submission.
-- **Java Version**: Console-based simulation; written for practice and comparison.
-- **Python Version**: Most user-friendly with Tkinter GUI; does not persist history after closing (can be extended easily).
+Integrate with a database for persistent storage
 
----
-
-## ✅ Future Scope
-
-- Add database (SQLite or CSV) for permanent record
-- Export history as PDF or CSV
-- Login system for admin/staff
-- Slot-based visual parking map (GUI)
+Create a basic web UI for interaction
 
