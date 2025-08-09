@@ -26,3 +26,11 @@ COPY --from=builder /build/target/*.jar app.jar
 
 # Run the application when the container starts
 CMD ["java", "-jar", "app.jar"]
+
+
+
+## Build image
+# docker build -t vehicle-parking-system:v1         this should be run in locally to create docker image
+
+# # Run container
+# docker run vehicle-parking-system
