@@ -1,0 +1,48 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Build with Maven
+      run: mvn -B clean install
+
+    - name: Run Tests
+      run: mvn test
+
+    - name: Send Email Notification
+      if: always() # Runs even if previous steps fail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com      # Your SMTP server address
+        server_port: 587                    # Your SMTP port (587 for TLS)
+        username: ${{ secrets.EMAIL_USERNAME }}   # can enter manually but it is not secure  this will fetch id and password from  'Secrets and variables'
+        password: ${{ secrets.EMAIL_PASSWORD }}   # can enter manually but it is not secure
+        subject: "GitHub Actions CI Notification - Vehicle-parking-system"
+        to: recipient-email@example.com     # Email address where you want to receive alerts
+        from: 4mh20is021@gmail.com          # Email address sending the notification
+        body: |
+          Repository: ${{ github.repository }}
+          Event: ${{ github.event_name }}
+          Branch: ${{ github.ref }}
+          Status: ${{ job.status }}
+          Commit: ${{ github.sha }}
+          Author: ${{ github.actor }}
+          Commit Message: ${{ github.event.head_commit.message }}
