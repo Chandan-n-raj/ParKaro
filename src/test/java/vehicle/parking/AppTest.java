@@ -1,3 +1,6 @@
+import org.junit.jupiter.api.Test; // for JUnit 5
+// or
+import org.junit.Test; // for JUnit 4
 @Test
 public void testParkingAvailability() {
     int totalFloors = 2;
