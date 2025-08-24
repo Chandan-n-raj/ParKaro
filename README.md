@@ -1,6 +1,6 @@
-# 🚗 ParQaro 🅿️
+# 🚗 ParkIN 🅿️
 
-<b>ParQaro</b> is a Java-based Vehicle Parking Management System built using Maven.
+<b>ParkIN</b> is a Java-based Vehicle Parking Management System built using Maven.
 It was developed by adapting my older console-based parking system code and enhancing it with Maven build management, CI/CD automation, and Docker support.
 
 ### 📜 Project Overview
